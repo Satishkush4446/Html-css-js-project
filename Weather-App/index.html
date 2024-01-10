@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="card">
+        <div class="search">
+            <input type="text" placeholder="enter city name" spellcheck="false">
+            <button><img src="./images/search.png" alt="" srcset=""></button>
+        </div>
+        <div class="weather">
+            <img src="./images/rain.png" alt="" srcset="" class="Weather-icon">
+            <h1 class="temp">22°C</h1>
+            <h2 class="city">New York</h2>
+            <div class="details">
+                <div class="col">
+                    <img src="./images/humidity.png" alt="" srcset="">
+                    <div>
+                        <p class="humidity">50%</p>
+                        <p>humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="./images/wind.png" alt="" srcset="">
+                    <div>
+                        <p class="wind">15 km/h</p>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const apikey = "863242cfb2b1d357e6893d9a4df19a4b";
+const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=bangalore";
+
+async function checkWeather() {
+    const response = await fetch(apiUrl + `&appid=${apikey}`);
+    const data = await response.json();
+
+    // Now you can use the 'data' variable to access the weather information
+    console.log(data);
+    document.querySelector(".city").innerHTML =data.name;
+}
+
+// Call the function to check the weather
+checkWeather();
+
+    </script>
+</body>
+
+</html>
