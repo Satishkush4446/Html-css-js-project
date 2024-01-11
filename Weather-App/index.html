@@ -40,56 +40,57 @@
         </div>
     </div>
     <script>
-       const apikey = "863242cfb2b1d357e6893d9a4df19a4b";
-const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+        const apikey = "c47776cbb775d7e4175598f5938f180e";
+        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
-const searchBox = document.querySelector(".search input");
-const searchBtn = document.querySelector(".search button");
+        const searchBox = document.querySelector(".search input");
+        const searchBtn = document.querySelector(".search button");
 
-const WeatherIcon = document.querySelector(".Weather-icon");
+        const WeatherIcon = document.querySelector(".Weather-icon");
 
-async function checkWeather(city) {
-    const response = await fetch(apiUrl + city + `&appid=${apikey}`);
+        async function checkWeather(city) {
+            const response = await fetch(apiUrl + city + `&appid=${apikey}`);
 
-    if (response.status == 404) {
-        document.querySelector(".error").style.display = "block";
-        document.querySelector(".weather").style.display = "none";
-    } else {
-        const data = await response.json();
+            if (response.status == 404) {
+                document.querySelector(".error").style.display = "block";
+                document.querySelector(".weather").style.display = "none";
+            } else {
+                const data = await response.json();
 
-        // Now you can use the 'data' variable to access the weather information
-        console.log(data);
-        document.querySelector(".city").innerHTML = data.name;
-        document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
-        document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
-        document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+                // Now you can use the 'data' variable to access the weather information
+                console.log(data);
+                document.querySelector(".city").innerHTML = data.name;
+                document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
+                document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+                document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
 
-        if (data.weather[0].main == "clouds") {
-            WeatherIcon.src = "./images/clouds.png";
-        } else if (data.weather[0].main == "clear") {
-            WeatherIcon.src = "./images/clear.png";
-        } else if (data.weather[0].main == "drizzle") {
-            WeatherIcon.src = "./images/drizzle.png";
-        } else if (data.weather[0].main == "humidity") {
-            WeatherIcon.src = "./images/humidity.png";
-        } else if (data.weather[0].main == "mist") {
-            WeatherIcon.src = "./images/mist.png";
-        } else if (data.weather[0].main == "rain") {
-            WeatherIcon.src = "./images/rain.png";
-        } else if (data.weather[0].main == "snow") {
-            WeatherIcon.src = "./images/snow.png";
-        } else if (data.weather[0].main == "wind") {
-            WeatherIcon.src = "./images/wind.png";
+                if (data.weather[0].main === "Smoke") {
+                    WeatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+                } else if (data.weather[0].main === "clear") {
+                    WeatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+                } else if (data.weather[0].main == "drizzle") {
+                    WeatherIcon.src = "./images/drizzle.png";
+                } else if (data.weather[0].main == "humidity") {
+                    WeatherIcon.src = "./images/humidity.png";
+                } else if (data.weather[0].main == "mist") {
+                    WeatherIcon.src = "./images/mist.png";
+                } else if (data.weather[0].main == "rain") {
+                    WeatherIcon.src = "./images/rain.png";
+                } else if (data.weather[0].main == "snow") {
+                    WeatherIcon.src = "./images/snow.png";
+                } else if (data.weather[0].main == "wind") {
+                    WeatherIcon.src = "./images/wind.png";
+                }
+
+                document.querySelector(".weather").style.display = "block";
+                document.querySelector(".error").style.display = "none";
+            }
         }
 
-        document.querySelector(".weather").style.display = "block";
-        document.querySelector(".error").style.display = "none";
-    }
-}
+        searchBtn.addEventListener("click", () => {
+            checkWeather(searchBox.value);
+        });
 
-searchBtn.addEventListener("click", () => {
-    checkWeather(searchBox.value);
-});
 
     </script>
 </body>
