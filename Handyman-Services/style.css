@@ -315,3 +315,40 @@ height: 630px;
 margin: 20px 0px 30px;
 }
 
+
+.app-bg {
+    background-color: #fff;
+}
+
+.app-contant{
+    display: flex;
+}
+
+.left, .right {
+    width: 50%;
+}
+#app .left {
+    background-color: #fff;
+    padding: 100px 0px;
+}
+#app .p-2 {
+    margin: 20px 0px;
+}
+
+#app .store{
+    /* background-color: red; */
+    display: flex;
+    gap: 0 10px;
+}
+#app .app-img img {
+    width: 180px;
+}
+#app .Right{
+    height: ;
+    background-image: url("./images/mobile.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
