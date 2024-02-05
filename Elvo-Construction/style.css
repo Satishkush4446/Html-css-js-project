@@ -168,7 +168,15 @@ h4{
     transform: translate(-50% , -39%);
     
 }
-
+#Services .container{
+    text-align: center;
+}
+#Services .container p:first-child {
+    color: #f4cb08;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2em;
+  }
 
 
 
@@ -184,7 +192,7 @@ h4{
 }
 .pods-container {
     width: 100%;
-    height: 600px;
+    height: auto;
 }
 .pod-col {
 width: auto;
@@ -220,3 +228,33 @@ color: #fff;
     background-position: 50% 50%;
     padding: 200px 15px 20px;
 }
+
+.Services-row {
+    padding: 100px 40px;
+}
+.Services-container {
+    padding-bottom: 40px;
+}
+.container-usp {
+    width: 100%;
+   
+}
+.container-usp img{
+    width: 80px;
+    height: 80px;
+    margin: 0px 15px;
+    border: 2px solid #f4cb08;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 15px;
+    margin-left: 0px;
+    
+}
+.usp{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    padding: 30px 15px 20px;
+}
+
