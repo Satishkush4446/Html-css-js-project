@@ -24,6 +24,7 @@ p{
     font-family: 'Open Sans', sans-serif;
     line-height: 1.6em;
 }
+
 h1{
     font-size: 48px;
     font-weight: 400;
@@ -36,7 +37,24 @@ h3{
     font-size: 24px;
     font-weight: 700;
 }
-
+h4{
+    font-size: 24px;
+    font-weight: 400;
+}
+.p-1{
+    font-size: 16px;
+    font-weight: 400;
+}
+.p-2{
+    font-size: 24px;
+    font-weight: 400;
+    font-style: italic;
+    color: #b3b3b3;
+}
+.max-w{
+    max-width: 1170px;
+    margin: auto;
+}
 
 .btn-1{
     width: 240px;
@@ -75,3 +93,30 @@ h3{
 } */
 
 /* <----------------------------Here above is global_code ----------------------------------------------> */
+
+
+
+.header-row {
+    width: 100%;
+    background-color: #111111;
+    height: 10vh;
+    color: white;
+    text-align: center;
+    padding: 20px 40px;
+}
+
+.hero-row {
+    background-image: url("");
+}
+.hero-container {
+}
+.col-left {
+}
+.divider {
+}
+.p-1 {
+}
+.container-btn {
+}
+.col-right {
+}
