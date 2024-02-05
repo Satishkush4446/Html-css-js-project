@@ -273,3 +273,13 @@ color: #fff;
     font-weight: 600;
     line-height: 1.2em;
 }
+.portfolio-gallery{
+    width: 100%;
+    padding: 40px 0px;
+}
+.portfolio-gallery img{
+    width: 24%;
+    height: auto;
+    margin: 5px;
+    
+}
